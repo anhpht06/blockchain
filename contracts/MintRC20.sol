@@ -13,7 +13,7 @@ contract MintRC20 is ERC20 {
     }
 
     function mint(address to, uint256 amount) public {
-        require(msg.sender == owner, "Only the owner can mint tokens");
+        // require(msg.sender == owner, "Only the owner can mint tokens");
         _mint(to, amount);
         emit Mint(to, amount); 
     }
