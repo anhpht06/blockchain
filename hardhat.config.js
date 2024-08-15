@@ -9,10 +9,11 @@ require("dotenv").config();
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.20",
-  networks:{
-    lineaSepolia:{
+  networks: {
+    lineaSepolia: {
       url: `https://linea-sepolia.infura.io/v3/${process.env.API_KEY}`,
       accounts: [`0x${process.env.PRIVATE_KEY}`],
-    }
+      gasPrice: 20000000000,
+    },
   },
 };
