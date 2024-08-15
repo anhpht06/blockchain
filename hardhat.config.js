@@ -15,5 +15,11 @@ module.exports = {
       accounts: [`0x${process.env.PRIVATE_KEY}`],
       gasPrice: 20000000000,
     },
+    bnbTestnet: {
+      url: "https://bsc-testnet.public.blastapi.io/",
+      chainId: 97,
+      gasPrice: 20000000000,
+      accounts: [`0x${process.env.PRIVATE_KEY}`],
+    },
   },
 };
