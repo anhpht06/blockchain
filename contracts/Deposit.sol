@@ -8,10 +8,10 @@ import "hardhat/console.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 
-contract MintERC721 is ERC721, Ownable {
+contract MintERC721 is ERC721{
     uint256 private _nextTokenId;
 
-    constructor() ERC721("MyNFT", "NFT") Ownable(msg.sender) {}
+    constructor() ERC721("MyNFT", "NFT")  {}
 
     function mint(address to) external {
         _safeMint(to, _nextTokenId);
@@ -19,14 +19,14 @@ contract MintERC721 is ERC721, Ownable {
     }
 }
 
-contract Deposited is Ownable {
+contract Deposited  {
     IERC20 public erc20Token;
     MintERC721 public erc721Token;
     mapping(address => uint256) public deposits;
     event Deposit(address indexed user, uint256 amount);
     uint256 public constant DEPOSIT_THRESHOLD = 1000 * 10**18; // Assuming ERC20 has 18 decimals
 
-    constructor(IERC20 _erc20Token, MintERC721 _erc721Token) Ownable(msg.sender) {
+    constructor(IERC20 _erc20Token, MintERC721 _erc721Token) {
         erc20Token = IERC20(_erc20Token);
         erc721Token = MintERC721(_erc721Token);
     }
