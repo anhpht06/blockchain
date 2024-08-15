@@ -47,5 +47,5 @@ contract Deposited is Ownable {
             // deposits[msg.sender] = 0;
             emit Deposit(msg.sender, deposits[msg.sender]);
         }
-    }q
+    }
 }
